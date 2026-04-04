@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    line-height: 1.5;
+}
+
+.contact-page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* header section */
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0b3b5c; /* deep navy – school like */
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.contact-header p {
+    font-size: 1.2rem;
+    color: #334155;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.accent-line {
+    width: 80px;
+    height: 4px;
+    background: #3b82f6;
+    margin: 1.25rem auto 0;
+    border-radius: 2px;
+}
+
+/* grid layout — responsive flex/ grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* --- contact info cards (left side) --- */
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 1.75rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    border-color: #b9d4fe;
+    box-shadow: 0 12px 24px rgba(59,130,246,0.06);
+}
+
+.card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #eef2ff;
+    color: #2563eb;
+    border-radius: 16px;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.card h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: #0f172a;
+}
+
+.card p, .card a {
+    color: #334155;
+    font-size: 1rem;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.3rem;
+    transition: color 0.15s;
+}
+
+.card a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.detail-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.detail-row i {
+    color: #3b82f6;
+    width: 1.25rem;
+    font-size: 0.95rem;
+}
+
+/* schedule / badge */
+.badge {
+    background: #f1f5f9;
+    border-radius: 100px;
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1e293b;
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- contact form (right side) --- */
+.contact-form-container {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+}
+
+.contact-form-container h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #0b3b5c;
+    margin-bottom: 0.5rem;
+}
+
+.form-sub {
+    color: #475569;
+    margin-bottom: 1.75rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e293b;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+label i {
+    color: #3b82f6;
+    margin-right: 0.3rem;
+    font-size: 0.85rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    background: #fafcfc;
+    transition: 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.05);
+}
+
+.btn-submit {
+    background: #0b3b5c;
+    color: white;
+    font-weight: 600;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.2s, transform 0.1s;
+    width: 100%;
+    margin-top: 0.5rem;
+    border: 1px solid transparent;
+}
+
+.btn-submit:hover {
+    background: #1e4b6e;
+    transform: scale(1.01);
+}
+
+.btn-submit i {
+    font-size: 0.95rem;
+}
+
+/* --- map & visit section --- */
+.visit-section {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid #e2e8f0;
+    margin-top: 1rem;
+}
+
+.visit-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.visit-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0b3b5c;
+}
+
+.map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 280px;
+    border: 0;
+    display: block;
+}
+
+/* staff contact short list */
+.staff-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+    align-items: center;
+    background: #f8fafc;
+    padding: 1.25rem 1.5rem;
+    border-radius: 20px;
+}
+
+.staff-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.staff-item i {
+    font-size: 1.2rem;
+    color: #2563eb;
+    background: white;
+    padding: 0.6rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+}
+
+/* ---------- responsive ---------- */
+@media screen and (max-width: 950px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+    .contact-header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .contact-page {
+        padding: 1.5rem 1rem;
+    }
+    .contact-header h1 {
+        font-size: 1.9rem;
+    }
+    .contact-header p {
+        font-size: 1rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .contact-form-container {
+        padding: 1.5rem;
+    }
+    .visit-section {
+        padding: 1.5rem;
+    }
+    .staff-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+    }
+    .btn-submit {
+        padding: 0.8rem;
+    }
+}
+
+/* utility */
+.mt-2 {
+    margin-top: 0.75rem;
+}
+.text-sm {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+.school-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.8rem;
+}
+.school-social a {
+    color: #475569;
+    font-size: 1.3rem;
+    transition: color 0.2s;
+}
+.school-social a:hover {
+    color: #2563eb;
+}
