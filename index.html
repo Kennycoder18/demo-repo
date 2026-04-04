@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Oakwood Academy | Contact</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: clean, modern sans-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+        }
+
+        .contact-page {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* header section */
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0b3b5c; /* deep navy – school like */
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: #334155;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background: #3b82f6;
+            margin: 1.25rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* grid layout — responsive flex/ grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        /* --- contact info cards (left side) --- */
+        .info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.75rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: #b9d4fe;
+            box-shadow: 0 12px 24px rgba(59,130,246,0.06);
+        }
+
+        .card-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: #eef2ff;
+            color: #2563eb;
+            border-radius: 16px;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #0f172a;
+        }
+
+        .card p, .card a {
+            color: #334155;
+            font-size: 1rem;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.3rem;
+            transition: color 0.15s;
+        }
+
+        .card a:hover {
+            color: #2563eb;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .detail-row i {
+            color: #3b82f6;
+            width: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        /* schedule / badge */
+        .badge {
+            background: #f1f5f9;
+            border-radius: 100px;
+            padding: 0.35rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1e293b;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- contact form (right side) --- */
+        .contact-form-container {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-form-container h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #0b3b5c;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-sub {
+            color: #475569;
+            margin-bottom: 1.75rem;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e293b;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        label i {
+            color: #3b82f6;
+            margin-right: 0.3rem;
+            font-size: 0.85rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            background: #fafcfc;
+            transition: 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(59,130,246,0.05);
+        }
+
+        .btn-submit {
+            background: #0b3b5c;
+            color: white;
+            font-weight: 600;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: background 0.2s, transform 0.1s;
+            width: 100%;
+            margin-top: 0.5rem;
+            border: 1px solid transparent;
+        }
+
+        .btn-submit:hover {
+            background: #1e4b6e;
+            transform: scale(1.01);
+        }
+
+        .btn-submit i {
+            font-size: 0.95rem;
+        }
+
+        /* --- map & visit section --- */
+        .visit-section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            margin-top: 1rem;
+        }
+
+        .visit-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .visit-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0b3b5c;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 280px;
+            border: 0;
+            display: block;
+        }
+
+        /* staff contact short list */
+        .staff-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.25rem;
+            align-items: center;
+            background: #f8fafc;
+            padding: 1.25rem 1.5rem;
+            border-radius: 20px;
+        }
+
+        .staff-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .staff-item i {
+            font-size: 1.2rem;
+            color: #2563eb;
+            background: white;
+            padding: 0.6rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+        }
+
+        /* ---------- responsive ---------- */
+        @media screen and (max-width: 950px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+            .contact-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            .contact-page {
+                padding: 1.5rem 1rem;
+            }
+            .contact-header h1 {
+                font-size: 1.9rem;
+            }
+            .contact-header p {
+                font-size: 1rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .contact-form-container {
+                padding: 1.5rem;
+            }
+            .visit-section {
+                padding: 1.5rem;
+            }
+            .staff-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.3rem;
+            }
+            .btn-submit {
+                padding: 0.8rem;
+            }
+        }
+
+        /* utility */
+        .mt-2 {
+            margin-top: 0.75rem;
+        }
+        .text-sm {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        .school-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.8rem;
+        }
+        .school-social a {
+            color: #475569;
+            font-size: 1.3rem;
+            transition: color 0.2s;
+        }
+        .school-social a:hover {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <main class="contact-page">
+        <!-- header with school name & vision -->
+        <div class="contact-header">
+            <h1>✉️ Get in touch</h1>
+            <p>Oakwood Academy — where curiosity meets excellence</p>
+            <div class="accent-line"></div>
+        </div>
+
+        <!-- 2‑col grid: info cards + form -->
+        <div class="contact-grid">
+            <!-- left: info cards (responsive) -->
+            <div class="info-cards">
+                <!-- card 1: address & campus -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>Main Campus</h3>
+                    <p>4500 Education Drive<br>Harbor Town, CA 90210</p>
+                    <div class="detail-row">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Near Riverview Park, East Wing</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-mail-bulk"></i>
+                        <span>P.O. Box 4321, Harbor Town</span>
+                    </div>
+                    <div class="school-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <!-- card 2: contact & communication -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call or email</h3>
+                    <p><strong>Admissions office:</strong><br><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                    <p><strong>Main administration:</strong><br><a href="tel:+15557654321">+1 (555) 765-4321</a></p>
+                    <p><strong>Email:</strong><br><a href="mailto:info@oakwood.edu">info@oakwood.edu</a></p>
+                    <p><strong>Attendance:</strong><br><a href="mailto:attendance@oakwood.edu">attendance@oakwood.edu</a></p>
+                    <div class="mt-2">
+                        <span class="badge"><i class="far fa-clock"></i> Mon–Fri 8:00 AM – 4:30 PM</span>
+                        <span class="badge"><i class="far fa-calendar"></i> Sat by appointment</span>
+                    </div>
+                </div>
+                <!-- card 3: quick reply / emergency -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-message"></i>
+                    </div>
+                    <h3>Quick contacts</h3>
+                    <div class="detail-row">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>Counseling: <a href="mailto:counselor@oakwood.edu">counselor@oakwood.edu</a></span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-bus"></i>
+                        <span>Transport: <a href="tel:+15559876543">ext. 4501</a></span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-id-card"></i>
+                        <span>Registrar: <a href="mailto:registrar@oakwood.edu">registrar@oakwood.edu</a></span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Careers: <a href="mailto:hr@oakwood.edu">hr@oakwood.edu</a></span>
+                    </div>
+                    <p class="text-sm" style="margin-top: 0.8rem;"><i class="fas fa-chevron-circle-right"></i> For emergencies during school hours, call main line and press 0.</p>
+                </div>
+            </div>
+
+            <!-- right: contact form (fully responsive) -->
+            <div class="contact-form-container">
+                <h2><i class="fas fa-pen-to-square" style="color: #2563eb; margin-right: 0.5rem;"></i> Send us a message</h2>
+                <div class="form-sub">We’ll get back to you within 24 hours.</div>
+
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Full name *</label>
+                        <input type="text" placeholder="e.g. Alex Rivera" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email address *</label>
+                        <input type="email" placeholder="parent@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> Phone number (optional)</label>
+                        <input type="tel" placeholder="(555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-tag"></i> Inquiry type</label>
+                        <select>
+                            <option>Admissions & enrollment</option>
+                            <option>Academic affairs</option>
+                            <option>Student services</option>
+                            <option>Facilities & events</option>
+                            <option>General inquiry</option>
+                            <option>Support the school</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-comment"></i> Message *</label>
+                        <textarea rows="4" placeholder="How can we help you? Please include your student's name if applicable..." required></textarea>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0.5rem;">
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Submit message
+                        </button>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.8rem;">
+                        <i class="fas fa-lock" style="margin-right: 0.25rem;"></i> Your information is protected.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- map & visit / staff contact (embedded) -->
+        <div class="visit-section">
+            <div class="visit-header">
+                <i class="fas fa-map-pin" style="font-size: 2rem; color: #2563eb; background: #eef2ff; padding: 0.8rem; border-radius: 18px;"></i>
+                <h3>Visit our campus</h3>
+            </div>
+            <!-- embedded responsive Google Map (simulated placeholder) -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0865678901234!2d-122.41941508468198!3d37.774929279759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064d2c7e005%3A0x5f3a4b7a5b3a6c!2s4500%20Education%20Dr%2C%20Harbor%20Town%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1610001234567!5m2!1sen!2sus" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Oakwood Academy campus map">
+                </iframe>
+            </div>
+            <!-- extra info: reception and staff -->
+            <div class="staff-row">
+                <div class="staff-item">
+                    <i class="fas fa-door-open"></i>
+                    <div><strong>Reception hours</strong><br>Mon–Fri 8:00 – 16:30</div>
+                </div>
+                <div class="staff-item">
+                    <i class="fas fa-flag"></i>
+                    <div><strong>Principal's office</strong><br><a href="mailto:principal@oakwood.edu">principal@oakwood.edu</a></div>
+                </div>
+                <div class="staff-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <div><strong>PTA liaison</strong><br><a href="mailto:pta@oakwood.edu">pta@oakwood.edu</a></div>
+                </div>
+                <div class="staff-item">
+                    <i class="fas fa-wheelchair"></i>
+                    <div><strong>Accessibility</strong><br><a href="tel:+15557654321">Dial 7112</a></div>
+                </div>
+            </div>
+            <p style="margin-top: 1.2rem; border-top: 1px solid #eef2f6; padding-top: 1.2rem; color: #334155;">
+                <i class="fas fa-car" style="margin-right: 0.5rem;"></i>  
+                <strong>Parking:</strong> Visitor parking available in front lot (enter via North Gate). 
+                <span style="display: inline-block; background: #e2e8f0; border-radius: 40px; padding: 0.2rem 1rem; margin-left: 0.75rem; font-size: 0.85rem;">Free visitor pass</span>
+            </p>
+        </div>
+
+        <!-- small footer / accreditation -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; font-size: 0.85rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; flex-wrap: wrap;">
+            <span>© 2025 Oakwood Academy — accredited by CAIS & WASC</span>
+            <span style="display: flex; gap: 1rem;">
+                <a href="#" style="color: #475569; text-decoration: none;">Privacy</a>
+                <a href="#" style="color: #475569; text-decoration: none;">Non-discrimination policy</a>
+            </span>
+        </div>
+    </main>
+
+    <!-- subtle responsive improvement: touch-friendly callout (no extra JS needed) -->
+</body>
+</html>
