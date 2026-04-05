@@ -19,12 +19,6 @@ document.querySelectorAll('.mobile-nav-links a').forEach(link => {
 });
 
 
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
 // Get all slides and progress dots
 const slides = document.querySelectorAll('.slide');
