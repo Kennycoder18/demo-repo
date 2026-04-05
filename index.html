@@ -91,22 +91,22 @@
                 <h2><i class="fas fa-pen-to-square" style="color: #2563eb; margin-right: 0.5rem;"></i> Send us a message</h2>
                 <div class="form-sub">We’ll get back to you within 24 hours.</div>
 
-                <form action="#" method="post">
+                <form action="https://formsubmit.co/ndopiyoram@email.com" method="post">
                     <div class="form-group">
                         <label><i class="fas fa-user"></i> Full name *</label>
-                        <input type="text" placeholder="e.g. Alex Rivera" required>
+                        <input type="name" placeholder="e.g. Alex Rivera" name="name" required>
                     </div>
                     <div class="form-group">
                         <label><i class="fas fa-envelope"></i> Email address *</label>
-                        <input type="email" placeholder="parent@example.com" required>
+                        <input type="email" placeholder="parent@example.com" name="email" required>
                     </div>
                     <div class="form-group">
                         <label><i class="fas fa-phone"></i> Phone number (optional)</label>
-                        <input type="tel" placeholder="(555) 123-4567">
+                        <input type="tel" placeholder="(555) 123-4567" name="phone">
                     </div>
                     <div class="form-group">
                         <label><i class="fas fa-tag"></i> Inquiry type</label>
-                        <select>
+                        <select name="inquiry-type">
                             <option>Admissions & enrollment</option>
                             <option>Academic affairs</option>
                             <option>Student services</option>
@@ -117,10 +117,10 @@
                     </div>
                     <div class="form-group">
                         <label><i class="fas fa-comment"></i> Message *</label>
-                        <textarea rows="4" placeholder="How can we help you? Please include your student's name if applicable..." required></textarea>
+                        <textarea rows="4" placeholder="How can we help you? Please include your student's name if applicable..." name="message" required></textarea>
                     </div>
                     <div class="form-group" style="margin-bottom: 0.5rem;">
-                        <button type="submit" class="btn-submit">
+                        <button type="submit" class="btn-submit" style="background: #2563eb; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                             <i class="fas fa-paper-plane"></i> Submit message
                         </button>
                     </div>

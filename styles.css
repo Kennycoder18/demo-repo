@@ -199,22 +199,18 @@ input:focus, select:focus, textarea:focus {
 }
 
 .btn-submit {
-    background: #0b3b5c;
+    background: #2563eb;
     color: white;
-    font-weight: 600;
-    padding: 0.9rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 40px;
+    border-radius: 8px;
     font-size: 1rem;
-    cursor: pointer;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    justify-content: center;
     gap: 0.5rem;
-    transition: background 0.2s, transform 0.1s;
+    transition: all 0.2s ease;
     width: 100%;
-    margin-top: 0.5rem;
-    border: 1px solid transparent;
+    text-align: center;
 }
 
 .btn-submit:hover {
